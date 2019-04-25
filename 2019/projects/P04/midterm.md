@@ -11,12 +11,7 @@
 比赛数据抽取的时间范围是某连续 30 天的数据。总体而言，数据分为：训练集数据文件、测试集数据文件、用户特征文件以及种子包对应的广告特征文件四部分。
 **训练集数据文件 train.csv** 每行代表一个训练样本，各字段之间由逗号分隔，格式为：“aid,uid,label”。其中，aid 唯一标识一个广告，uid 唯一标识一个用户。 样本 label 的取值为 +1 或 -1，其中 +1 表示种子用户，-1 表示非种子用户。为简 化问题，一个种子包仅对应一个广告 aid，两者为一一对应的关系。
 **测试集数据文件 test.csv**每行代表一个训练样本，各字段之间由逗号分隔，格式为：“aid,uid”。字段含义同训练集。
-**用户特征文件 userFeature.data** 每 行 代 表 一 个 用 户 的 特 征 数 据， 格 式 为：
-“uid|features”，uid 和 features 用竖线“|”分隔。其中 feature 采用 vowpal
-wabbit（https://github.com/JohnLangford/vowpal_wabbit）格式：“feature_group1|feature_group2|feature_group3|...”。 每 个 feature_group
-代表一个特征组，多个特征组之间也以竖线“|”分隔。一个特征组若包括多个值
-则以空格分隔，格式为：“feature_group_name fea_name1 fea_name2 …”，
-其中 fea_name 采用数据编号的格式。
+**用户特征文件 userFeature.data** 每 行 代 表 一 个 用 户 的 特 征 数 据， 格 式 为：“uid|features”，uid 和 features 用竖线“|”分隔。其中 feature 采用 vowpal wabbit格式：“feature_group1|feature_group2|feature_group3|...”。 每 个 feature_group代表一个特征组，多个特征组之间也以竖线“|”分隔。一个特征组若包括多个值则以空格分隔，格式为：“feature_group_name fea_name1 fea_name2 …”，其中 fea_name 采用数据编号的格式。
 **广告特征文件 adFeature.csv** 格式为：“aid,advertiserId,campaignId,creativeI
 d,creativeSize,adCategoryId,productId,productType”。其中，aid 唯一标识一
 个广告，其余字段为广告特征，各字段之间由逗号分隔。
