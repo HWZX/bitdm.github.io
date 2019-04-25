@@ -25,6 +25,7 @@ d,creativeSize,adCategoryId,productId,productType”。其中，aid 唯一标识
 
 **用户特征**包含以下特征组（feature_group_name），如果具体特征取值未知，均
 以 0 表示：
+
 | 数据类型   |    说明   |包含字段|
 | :-: | :-:| :-: |
 | 年龄（age）| 分段表示，每个序号表示一个年龄分段 |     |
