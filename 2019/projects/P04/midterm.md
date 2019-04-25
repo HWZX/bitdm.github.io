@@ -87,16 +87,21 @@ d,creativeSize,adCategoryId,productId,productType”。其中，aid 唯一标识
 ### 数据分析
 
 1. CountVectorizer()的用法：from sklearn.feature_extraction.text import CountVectorizer结果它默认将长度小于等于1的字符当停止词去掉了，因为我需要分析的特征vectorizer = CountVectorizer(min_df=0,token_pattern='\w+')。效果如图：
+
 ![Alt text](./1556091393670.png)
 
 2. 使用pandas merge数据，出现不应该出现的NaN。查阅资料发现原因：待merge的两个表中的uid，dtype类型不同，造成python以为两个表没有共同键值，于是产生大量NaN。事实确实如此：
+
 ![Alt text](./1556091434075.png)
 
 解决方案：直接更改uf['uid'].dtype会报错，应该使用pandas.DataFrame.astype()方法
+
 ![Alt text](./1556091466540.png)
 
 3. pandas拆分数据
+
 ![Alt text](./1556091479479.png)
+
 ![Alt text](./1556091500925.png)
 
 ### 数据可视化
